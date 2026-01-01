@@ -1,9 +1,14 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'digital_garden';
+$host = "localhost";
+$dbname = "digital_garden";
+$username = "root";
+$password = "";
 
-$connection = mysqli_connect($host, $user, $pass, $db);
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;",$username,$password);
+} catch (PDOException $e) {
+   die("erreur de connexion a la base de donne");
+}
 ?>
+
 
